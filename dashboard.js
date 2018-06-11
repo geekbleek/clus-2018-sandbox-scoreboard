@@ -91,7 +91,6 @@ function processScore(message) {
 		else if (message.weight) {
 			weight = message.weight
 		}
-		weight = weight * 3;
 		updateScore(message.player, weight, null, sound)
     }
     
@@ -131,7 +130,7 @@ function updateScore (player, weight, init, sound) {
 }
 
 function normalizeWeight(weight){
-	normalizedWeight = Math.round(weight/10)
+	normalizedWeight = Math.round((weight*3)/10)
 	if (normalizedWeight > 10) {
 		normalizedWeight = 10
 	}
