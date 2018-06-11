@@ -85,7 +85,7 @@ function processScore(message) {
 	//increment score
 	if (message.player <= 3) {
 		var sound = true;
-		if (message.weightPercentage) {
+		if (message.weightPercentage !== null) {
 			var weight = message.weightPercentage;
 		}
 		// else if (message.weight) {
