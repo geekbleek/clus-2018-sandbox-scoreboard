@@ -91,6 +91,7 @@ function processScore(message) {
 		else if (message.weight) {
 			weight = message.weight
 		}
+		weight = weight * 3;
 		updateScore(message.player, weight, null, sound)
     }
     
