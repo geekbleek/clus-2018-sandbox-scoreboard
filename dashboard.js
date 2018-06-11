@@ -81,12 +81,14 @@ function resetGame() {
 }
 
 function processScore(message) {
+	// console.log(message);
 	// console.log(JSON.stringify(message));
 	//increment score
 	if (message.player <= 3) {
 		var sound = true;
 		if (message.weightPercentage !== null) {
 			var weight = message.weightPercentage;
+			// console.log(weight);
 		}
 		// else if (message.weight) {
 		// 	weight = message.weight
@@ -97,6 +99,8 @@ function processScore(message) {
 }
 
 function updateScore (player, weight, init, sound) {
+	// console.log('raw weight');
+	// console.log(weight);
 	//if gameOn is true, or init is true (for intialization & resets) - update scores and pass to UI
 	if ((gameOn || init) && isWinner === false) {
 		//set topic to scoreUpdate1, scoreUpdate2 etc.
@@ -130,6 +134,7 @@ function updateScore (player, weight, init, sound) {
 }
 
 function normalizeWeight(weight){
+	console.log(`raw weight is ${weight}`)
 	normalizedWeight = Math.round((weight)/10)
 	if (normalizedWeight > 10) {
 		normalizedWeight = 10
