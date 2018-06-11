@@ -85,12 +85,12 @@ function processScore(message) {
 	//increment score
 	if (message.player <= 3) {
 		var sound = true;
-		if (message.Weight) {
-			var weight = message.Weight;
+		if (message.weightPercentage) {
+			var weight = message.weightPercentage;
 		}
-		else if (message.weight) {
-			weight = message.weight
-		}
+		// else if (message.weight) {
+		// 	weight = message.weight
+		// }
 		updateScore(message.player, weight, null, sound)
     }
     
@@ -130,7 +130,7 @@ function updateScore (player, weight, init, sound) {
 }
 
 function normalizeWeight(weight){
-	normalizedWeight = Math.round((weight*3)/10)
+	normalizedWeight = Math.round((weight)/10)
 	if (normalizedWeight > 10) {
 		normalizedWeight = 10
 	}
